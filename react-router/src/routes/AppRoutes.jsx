@@ -1,0 +1,24 @@
+import React from 'react';
+import { Routes, Route } from 'react-router';
+import Home from '../pages/Home';
+import { About } from '../pages/About';
+import Contact from '../pages/Contact';
+import Detail from '../pages/Detail';
+import NestedAbout from '../pages/NestedAbout';
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />}>
+        <Route path="detail" element={<Detail />} />
+      </Route>
+
+      <Route path="/about" element={<About />}>
+      <Route path="nested" element={<NestedAbout/>}/>
+      </Route>
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  );
+};
+
+export default AppRoutes;
